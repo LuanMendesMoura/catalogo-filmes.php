@@ -35,15 +35,24 @@ class Filme {
         return $stmt->fetchAll();
     }
 
-    // AULA DO GUILHERME ********************************************************************************************************
     public function findById($id) {
-        $query = "SELECT * FROM $this->tabela WHERE id = :id";
 
+        $query = "SELECT * FROM $this->tabela WHERE id = :id";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);
-
         $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 
         return $stmt->fetch();
+    }
+
+    public function excluirFilme($id) {
+
+        $query = "DELETE FROM $this->tabela WHERE id = :id";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
     }
 }
