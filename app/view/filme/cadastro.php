@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (!empty($id)) {
         $filmeModel = new Filme();
-        $sucesso = $filmeModel->excluirFilme($id);
+        $sucesso = $filmeModel->cadastrarFilme($id);
 
         if ($sucesso) {
             return header("Location: listar.php?

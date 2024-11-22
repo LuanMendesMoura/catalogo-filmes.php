@@ -55,4 +55,17 @@ class Filme {
 
         return $stmt->rowCount() > 0;
     }
+
+    public function cadastrarFilme($nome,$ano,) {
+
+        $query = "INSERT INTO $this->tabela ($this->nome, $this->ano, $this->descricao) VALUES (nome = :nome, ano = :ano, descricao = :descricao) ";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
+        $stmt->bindParam(":ano", $ano, PDO::PARAM_INT);
+        $stmt->bindParam(":descricao", $descricao, PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+
+        return $stmt->fetch();
+    }
 }

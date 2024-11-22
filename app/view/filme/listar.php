@@ -10,17 +10,35 @@ $filmes = $filmeModel->buscarTodos();
 // print_r($filmes[1]);
 // echo "</pre>";
 
+// var_dump($filmes)
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Tabela De Filmes</title>
+
+    <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
 </head>
 <body>
-    <main>
-        <table border="1">
+    <section class="container">
+        <h2>Filme</h2>
+
+        <div class="acao">
+            <a href="cadatro.php">
+                <button>
+                    <span>Novo</span>
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                </button>
+            </a>
+        </div>
+
+
+        <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Nome</th>
@@ -35,17 +53,23 @@ $filmes = $filmeModel->buscarTodos();
                         <td><?php echo $filme->nome ?></td>
                         <td><?php echo $filme->ano ?></td>
                         <td><?php echo $filme->descricao ?></td>
-        
+            
                         <td>
                             <form action="visualizarFilme.php" method="GET">
                                 <input type="hidden" name="id" value="<?= $filme->id; ?>">
-                                <button>Detalhes</button>
+                                <button>
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </button>
                             </form>
-        
+            
                             <form action="excluirFilme.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $filme->id; ?>">
                                 <button onclick="return confirm('Tem certaza que deseja excluir o filme?')">
-                                Excluir
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                </span>
                                 </button>
                             </form>
                         </td>
@@ -53,20 +77,9 @@ $filmes = $filmeModel->buscarTodos();
                 <?php } ?>
             </tbody>
         </table>
-    </main>
-    <script>
-        const parametros = new URLSearchParams(window.location.search)
-        const tipoMensagem = parametros.get("msg")
-        const notificacao = document.createElement("div")
+    </section>
 
-        if (tipoMensagem === "sucesso") {
-            notificacao.innerHTML = "Operação realizada com sucesso"
-        } else if (tipoMensagem === "erro") {
-            notificacao.innerHTML = "Erro ao realizar operação"
-        }
-
-        document.body.appendChild(notificacao)
-    </script>
+    <script src="/catalogo-filmes/public/js/main.js" ></script>
 </body>
 </html>
 

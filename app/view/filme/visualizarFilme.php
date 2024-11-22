@@ -18,18 +18,25 @@ $filme = $filmeModel->findById($id);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+
+    <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
+
 </head>
 <body>
-    <h2>Detalhes do Filme</h2>
-
-    <h3>Nome: <?php echo $filme->nome; ?> </h3>
-    <p>Ano: <?php echo $filme->ano;?> </p>
-    <p>Descrição: <?php echo $filme->descricao;?> </p>
-
-    <!--voltar para a pagina listar.php -->
-    
-    <form action="listar.php" method="GET">
-        <button>Voltar</button>
-    </form>
+    <section class="container">
+        <h2>Detalhes do Filme</h2>
+        <h3>Nome: <?php echo $filme->nome; ?> </h3>
+        <p>Ano: <?php echo $filme->ano;?> </p>
+        <p>Descrição: <?php echo $filme->descricao;?> </p>
+        <!--voltar para a pagina listar.php -->
+        
+        <a href="listar.php">
+            <button>
+            <span class="material-symbols-outlined">
+                arrow_back
+            </span>
+            </button>
+        </a>
+    </section>
 </body>
 </html>
