@@ -56,16 +56,30 @@ class Filme {
         return $stmt->rowCount() > 0;
     }
 
-    public function cadastrarFilme($nome,$ano,) {
+    public function inserirFilme($nome,$ano,$descricao) {
 
-        $query = "INSERT INTO $this->tabela ($this->nome, $this->ano, $this->descricao) VALUES (nome = :nome, ano = :ano, descricao = :descricao) ";
+        $query = "INSERT INTO $this->tabela (nome,ano,descricao) VALUES (:nome, :ano, :descricao)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
-        $stmt->bindParam(":ano", $ano, PDO::PARAM_INT);
-        $stmt->bindParam(":descricao", $descricao, PDO::PARAM_STR);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":ano", $ano);
+        $stmt->bindParam(":descricao", $descricao);
         $stmt->execute();
-        $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 
-        return $stmt->fetch();
+        return $stmt->rowCount() > 0;
     }
+
+    public function editarFilme($id, $nome, $ano, $descricao){
+
+        $query = "UPDATE $this->tabela SET nome=:nome, ano=:ano, descricao=:descricao WHERE id=:id";
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':ano', $ano);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;        
+    }
+
 }

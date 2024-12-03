@@ -27,7 +27,7 @@ $filmes = $filmeModel->buscarTodos();
         <h2>Filme</h2>
 
         <div class="acao">
-            <a href="cadatro.php">
+            <a href="cadastro.php">
                 <button>
                     <span>Novo</span>
                     <span class="material-symbols-outlined">
@@ -36,7 +36,6 @@ $filmes = $filmeModel->buscarTodos();
                 </button>
             </a>
         </div>
-
 
         <table class="table">
             <thead>
@@ -64,12 +63,21 @@ $filmes = $filmeModel->buscarTodos();
                                 </button>
                             </form>
             
+                            <form action="cadastro.php" method="GET">
+                                <input type="hidden" name="id" value="<?= $filme->id; ?>">
+                                <button>
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </form>
+
                             <form action="excluirFilme.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $filme->id; ?>">
                                 <button onclick="return confirm('Tem certaza que deseja excluir o filme?')">
                                     <span class="material-symbols-outlined">
                                         delete
-                                </span>
+                                    </span>
                                 </button>
                             </form>
                         </td>
