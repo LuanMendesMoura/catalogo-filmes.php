@@ -23,6 +23,19 @@ $filmes = $filmeModel->buscarTodos();
     <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <!-- <a class="logo" href="#">Meu Site</a> -->
+            <ul>
+                <li>
+                    <a href="home.php">Home</a>
+                </li>
+                <li>
+                    <a href="listar.php">Listar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="container">
         <h2>Filme</h2>
 
@@ -43,6 +56,7 @@ $filmes = $filmeModel->buscarTodos();
                 <th>Nome</th>
                 <th>Ano</th>
                 <th>Descrição</th>
+                <th></th>
                 <th>Ação</th>
             </thead>
             <tbody>
@@ -52,6 +66,7 @@ $filmes = $filmeModel->buscarTodos();
                         <td><?php echo $filme->nome ?></td>
                         <td><?php echo $filme->ano ?></td>
                         <td><?php echo $filme->descricao ?></td>
+                        <td><img class="img" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" ></td>
             
                         <td>
                             <form action="visualizarFilme.php" method="GET">

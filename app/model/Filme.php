@@ -16,6 +16,7 @@ class Filme {
     public $nome;
     public $ano;
     public $descricao;
+    public $urlIMG;
 
     // Contrutor do PHP
     public function __construct() {
@@ -68,18 +69,21 @@ class Filme {
         return $stmt->rowCount() > 0;
     }
 
-    public function editarFilme($id, $nome, $ano, $descricao){
+    public function editarFilme($id, $nome, $ano, $descricao, $urlIMG){
 
-        $query = "UPDATE $this->tabela SET nome=:nome, ano=:ano, descricao=:descricao WHERE id=:id";
+        $query = "UPDATE $this->tabela SET nome=:nome, ano=:ano, descricao=:descricao, urlIMG=:urlIMG WHERE id=:id";
 
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':ano', $ano);
         $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':urlIMG', $urlIMG);
         $stmt->execute();
 
         return $stmt->rowCount() > 0;        
     }
+
+
 
 }

@@ -14,8 +14,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $nome = $_POST["nome"];
         $ano = $_POST["ano"];
         $descricao = $_POST["descricao"];
+        $urlIMG = $_POST["urlIMG"];
 
-        $sucesso = $filmeModel->editarFilme($id, $nome, $ano, $descricao);
+        $sucesso = $filmeModel->editarFilme($id, $nome, $ano, $descricao, $urlIMG);
 
     } else {
         // Fluxo para Cadastro 
@@ -76,7 +77,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <label for="descricao">Descrição</label>
                 <input type="text" name="descricao" value="<?php echo $filme->descricao ?>">
             </div>
- 
+            <div>
+                <label for="urlIMG">Url Imagem</label>
+                <input type="text" name="urlIMG" value="<?php echo $filme->urlIMG ?>">
+            </div>
+            
             <button>Salvar</button>
         </form>
     </section>
