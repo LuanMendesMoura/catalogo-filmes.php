@@ -38,11 +38,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 } else if($_SERVER["REQUEST_METHOD"] === "GET"){
     $filme = null;
 
-    $filme = !empty($_GET["id"]) ? $filme = $filmeModel->findById($_GET["id"]) : new Filme();
+    $filme = !empty($_GET["id"]) ? $filme = $filmeModel->buscarPorId($_GET["id"]) : new Filme();
 
     if(!empty($_GET["id"])) {
         // Fluxo Editar
-        $filme = $filmeModel->findById($_GET["id"]);
+        $filme = $filmeModel->buscarPorId($_GET["id"]);
     } else {
         // Fluxo Cadastrar
         $filme = new Filme();
@@ -57,27 +57,28 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    
     <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
  
 </head>
 <body>
-    <section class="container">
+    <section class="container-info">
         <form action="cadastro.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $filme->id ?>">
 
-            <div>
+            <div class="info">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" value="<?php echo $filme->nome ?>">
             </div>
-            <div>
+            <div class="info">
                 <label for="ano">Ano</label>
                 <input type="text" name="ano" value="<?php echo $filme->ano ?>">
             </div>
-            <div>
+            <div class="info">
                 <label for="descricao">Descrição</label>
                 <input type="text" name="descricao" value="<?php echo $filme->descricao ?>">
             </div>
-            <div>
+            <div class="info">
                 <label for="urlIMG">Url Imagem</label>
                 <input type="text" name="urlIMG" value="<?php echo $filme->urlIMG ?>">
             </div>

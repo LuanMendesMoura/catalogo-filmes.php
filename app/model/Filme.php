@@ -36,7 +36,7 @@ class Filme {
         return $stmt->fetchAll();
     }
 
-    public function findById($id) {
+    public function buscarPorId($id) {
 
         $query = "SELECT * FROM $this->tabela WHERE id = :id";
         $stmt = $this->pdo->prepare($query);

@@ -25,13 +25,13 @@ $filmes = $filmeModel->buscarTodos();
 <body>
     <header>
         <nav>
-            <!-- <a class="logo" href="#">Meu Site</a> -->
+            <a class="logo" href="#">FILMES DB</a>
             <ul>
                 <li>
-                    <a href="home.php">Home</a>
+                    <a href="home.php">HOME</a>
                 </li>
                 <li>
-                    <a href="listar.php">Listar</a>
+                    <a href="listar.php">ADM</a>
                 </li>
             </ul>
         </nav>
@@ -40,14 +40,14 @@ $filmes = $filmeModel->buscarTodos();
         <h2>Filme</h2>
 
         <div class="acao">
-            <a href="cadastro.php">
+            <form action="cadastro.php">
                 <button>
                     <span>Novo</span>
                     <span class="material-symbols-outlined">
                         add
                     </span>
                 </button>
-            </a>
+            </form>
         </div>
 
         <table class="table">

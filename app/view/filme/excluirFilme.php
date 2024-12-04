@@ -10,11 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sucesso = $filmeModel->excluirFilme($id);
 
         if ($sucesso) {
-            return header("Location: listar.php?
-            msg=sucesso");
+            return header("Location: listar.php?msg=sucesso");
         } else {
-            return header("Location: listar.php?
-            msg=erro");
+            return header("Location: listar.php?msg=erro");
         }
     }
 }

@@ -8,7 +8,7 @@ if ($id == "") {
 }
 
 $filmeModel = new Filme();
-$filme = $filmeModel->findById($id);
+$filme = $filmeModel->buscarPorId($id);
 
 ?>
 
@@ -28,7 +28,7 @@ $filme = $filmeModel->findById($id);
         <h3>Nome: <?php echo $filme->nome; ?> </h3>
         <p>Ano: <?php echo $filme->ano;?> </p>
         <p>Descrição: <?php echo $filme->descricao;?> </p>
-        <img class="img" src="<?php echo $filme->urlIMG;?>" alt="Imagem do filme <?php echo $filme->nome; ?>">
+        <img class="imgView" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
         <!--voltar para a pagina listar.php -->
         
         <a href="listar.php">
