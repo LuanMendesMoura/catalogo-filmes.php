@@ -24,8 +24,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $nome = $_POST["nome"];
         $ano = $_POST["ano"];
         $descricao = $_POST["descricao"];
+        $urlIMG = $_POST["urlIMG"];
        
-        $sucesso = $filmeModel->inserirFilme($nome, $ano, $descricao);
+        $sucesso = $filmeModel->inserirFilme($nome, $ano, $descricao,$urlIMG);
     }
 
     if($sucesso){
@@ -62,28 +63,30 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
  
 </head>
 <body>
-    <section class="container-info">
+    <section class="cadastro-container">
         <form action="cadastro.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $filme->id ?>">
 
-            <div class="info">
+            <div class="cadastro-input">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" value="<?php echo $filme->nome ?>">
             </div>
-            <div class="info">
+            <div class="cadastro-input">
                 <label for="ano">Ano</label>
                 <input type="text" name="ano" value="<?php echo $filme->ano ?>">
             </div>
-            <div class="info">
+            <div class="cadastro-input">
                 <label for="descricao">Descrição</label>
                 <input type="text" name="descricao" value="<?php echo $filme->descricao ?>">
             </div>
-            <div class="info">
+            <div class="cadastro-input">
                 <label for="urlIMG">Url Imagem</label>
                 <input type="text" name="urlIMG" value="<?php echo $filme->urlIMG ?>">
             </div>
             
-            <button>Salvar</button>
+            <div class="button">
+                <button>Salvar</button>
+            </div>
         </form>
     </section>
 </body>

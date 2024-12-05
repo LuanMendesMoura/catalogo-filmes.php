@@ -57,13 +57,14 @@ class Filme {
         return $stmt->rowCount() > 0;
     }
 
-    public function inserirFilme($nome,$ano,$descricao) {
+    public function inserirFilme($nome,$ano,$descricao,$urlIMG) {
 
-        $query = "INSERT INTO $this->tabela (nome,ano,descricao) VALUES (:nome, :ano, :descricao)";
+        $query = "INSERT INTO $this->tabela (nome,ano,descricao,urlIMG) VALUES (:nome, :ano, :descricao, :urlIMG)";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":ano", $ano);
         $stmt->bindParam(":descricao", $descricao);
+        $stmt->bindParam(":urlIMG", $urlIMG);
         $stmt->execute();
 
         return $stmt->rowCount() > 0;
