@@ -29,7 +29,7 @@ $filme = $filmeModel->buscarPorId($id);
             <h3>Nome: <?php echo $filme->nome; ?> </h3>
             <p>Ano: <?php echo $filme->ano;?> </p>
             <p>Descrição: <?php echo $filme->descricao;?> </p>
-            <a href="listar.php">
+            <a href="home.php">
                 <button>
                     <span class="material-symbols-outlined">
                         arrow_back
