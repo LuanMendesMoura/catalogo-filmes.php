@@ -30,9 +30,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     if($sucesso){
-        return header("Location: listar.php?mensagem=sucesso");
+        return header("Location: listar.php?msg=sucesso");
     }else{
-        return header("Location: listar.php?mensagem=erro");
+        return header("Location: listar.php?msg=erro");
     }
 
 
