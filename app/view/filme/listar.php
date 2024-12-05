@@ -25,7 +25,6 @@ $filmes = $filmeModel->buscarTodos();
 <body>
     <header>
         <nav>
-            <a class="logo" href="#">FILMES DB</a>
             <ul>
                 <li>
                     <a href="home.php">HOME</a>

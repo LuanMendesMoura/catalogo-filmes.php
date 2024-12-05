@@ -19,7 +19,6 @@ $filmes = $filmeModel->buscarTodos();
 <body>
     <header>
         <nav>
-            <a class="logo" href="#">FILMES DB</a>
             <ul>
                 <li>
                     <a href="home.php">HOME</a>
@@ -34,10 +33,15 @@ $filmes = $filmeModel->buscarTodos();
         <section>
             <div class="filmes-lista">
                 <?php foreach ($filmes as $filme) { ?>
-                    <div class="filme"> 
-                    <?php echo"<span class='span-filme'> $filme->nome </span>" ?>
-                    <img class="img" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
-                    </div>
+                    <form action="visualizarFilme.php">
+                        <input type="hidden" name="id" value="<?= $filme->id; ?>">
+                            <button class="card">
+                                <div class="filme">
+                                    <?php echo"<span class='span-filme'> $filme->nome </span>" ?>
+                                    <img class="img" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
+                                </div>
+                            </button>
+                    </form>
                 <?php } ?>
            </div>
         </section>

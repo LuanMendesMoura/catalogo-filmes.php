@@ -23,21 +23,25 @@ $filme = $filmeModel->buscarPorId($id);
 
 </head>
 <body>
-    <section class="container">
-        <h2>Detalhes do Filme</h2>
-        <h3>Nome: <?php echo $filme->nome; ?> </h3>
-        <p>Ano: <?php echo $filme->ano;?> </p>
-        <p>Descrição: <?php echo $filme->descricao;?> </p>
-        <img class="imgView" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
+    <section class="container-view">
+        <div class="view">
+            <h2>Detalhes do Filme</h2>
+            <h3>Nome: <?php echo $filme->nome; ?> </h3>
+            <p>Ano: <?php echo $filme->ano;?> </p>
+            <p>Descrição: <?php echo $filme->descricao;?> </p>
+            <a href="listar.php">
+                <button>
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </button>
+            </a>
+        </div>
+        <div class="view">
+            <img class="imgView" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
+        </div>
         <!--voltar para a pagina listar.php -->
         
-        <a href="listar.php">
-            <button>
-            <span class="material-symbols-outlined">
-                arrow_back
-            </span>
-            </button>
-        </a>
     </section>
 </body>
 </html>

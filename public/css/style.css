@@ -64,6 +64,26 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 5px 20px; 
+    
+}
+
+.container-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    gap: 10px;
+
+    .imgView {
+        padding-top: 80px;
+        width: 200px;
+        height: 300px;
+    }
+
+    .view {
+        max-width: 50vh;
+        padding: 20px;
+    }
 }
 
 .container-info{
@@ -89,12 +109,7 @@ body {
     }
 }
 
-.imgView {
-    width: 200px;
-    height: 300px;
-    display: flex;
-    justify-content: flex-end;
-}
+
 .notificacao {
     position: fixed;
     top: 20px;
@@ -170,6 +185,11 @@ body {
 }
 
 /* CARDS HOME COMEÇO */
+.card {
+    border: none;
+    background-color: transparent;
+}
+
 .span-filme {
     min-height: 40px;
 }
