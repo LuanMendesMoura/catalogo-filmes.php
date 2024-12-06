@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>ADM</title>
     
     <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
  
@@ -67,24 +67,24 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         <form action="cadastro.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $filme->id ?>">
 
-            <div class="cadastro-input">
+            <div class="cadastro-label-input">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" value="<?php echo $filme->nome ?>">
             </div>
-            <div class="cadastro-input">
+            <div class="cadastro-label-input">
                 <label for="ano">Ano</label>
                 <input type="text" name="ano" value="<?php echo $filme->ano ?>">
             </div>
-            <div class="cadastro-input">
+            <div class="cadastro-label-input">
                 <label for="descricao">Descrição</label>
                 <input type="text" name="descricao" value="<?php echo $filme->descricao ?>">
             </div>
-            <div class="cadastro-input">
+            <div class="cadastro-label-input">
                 <label for="urlIMG">Url Imagem</label>
                 <input type="text" name="urlIMG" value="<?php echo $filme->urlIMG ?>">
             </div>
             
-            <div class="button">
+            <div class="cadastro-button">
                 <button>Salvar</button>
             </div>
         </form>

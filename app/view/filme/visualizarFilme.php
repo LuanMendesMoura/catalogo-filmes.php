@@ -17,7 +17,7 @@ $filme = $filmeModel->buscarPorId($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>DETALHES</title>
 
     <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
 
@@ -38,9 +38,8 @@ $filme = $filmeModel->buscarPorId($id);
             </a>
         </div>
         <div class="view">
-            <img class="imgView" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
+            <img class="img-view" src="<?php echo $filme->urlIMG?>" alt="Imagem do filme: <?php echo $filme->nome ?>" >
         </div>
-        <!--voltar para a pagina listar.php -->
         
     </section>
 </body>

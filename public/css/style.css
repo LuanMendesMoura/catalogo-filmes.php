@@ -9,127 +9,23 @@
     --cor-cinza-claro: #cdd0d3;
     --cor-fundo: #fff;
     --cor-texto: #B17457;
-    --cor-fundo-card: #4A4947 ;
+    --cor-texto-hover: #D8D2C2;
+    --cor-1-fundo-card: #fff ;
+    --cor-2-fundo-card: #FFF ;
+    --cor-nav-bar: #4A4947;
     font-size: 14px;
     font-family: "Lato", sans-serif;
 }
-
-/* NAV BAR COMEÇO */
 
 * {
     margin: 0;
     padding: 0;
 }
 
-
-nav {
-    background-color: #4A4947;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 8vh;    
-}
-
-.logo {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-a {
-    color: #D8D2C2;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-a:hover {
-    color: #B17457;
-    opacity: 0.7;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    letter-spacing: 2px;
-}
-
-/* NAV BAR FIM */
-
 body {
     background: var(--cor-fundo);
     color: var(--cor-texto);
 }
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px 20px; 
-    
-}
-
-.container-view {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    gap: 10px;
-
-    .imgView {
-        padding-top: 70px;
-        width: 200px;
-        height: 300px;
-    }
-
-    .view {
-        max-width: 50vh;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 50px;
-    }
-}
-
-.cadastro-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-
-    .cadastro-input {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    
-        input {
-            min-width: 70vh;
-            min-height: 20px;
-            margin-bottom: 20px;
-            padding: 5px;
-        }
-
-        label {
-            padding-left: 10px;
-            padding-bottom: 2px;
-        }
-
-    }
-    
-    
-    .button {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-
-        button {
-            padding: 5px;
-        }
-
-        /* button:hover {
-            background-color: #888888;
-          } */
-    }
-}
-
 
 .notificacao {
     position: fixed;
@@ -150,62 +46,174 @@ body {
     }
 }
 
-.acao {
+/* NAV BAR COMEÇO */
+nav {
+    background-color: var(--cor-nav-bar);
     display: flex;
-    justify-content: end;
-
-    a {
-        text-decoration: none;
-    }
-        
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;    
 }
 
-.table {
-    width: 100%;
-    border-color: var(--cor-cinza);
-    border-collapse: collapse;
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
 
-    thead, th, tbody, td, tr {
-        border-color: inherit;
-        border-style: solid;
-        border-width: 0;
+a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+a:hover {
+    color: var(--cor-texto-hover);
+    opacity: 0.7;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    letter-spacing: 2px;
+}
+/* NAV BAR FIM */
+
+/* VISUALIZAR FILME COMEÇO  */
+.container-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding-top: 70px;
+    gap: 10px;
+
+    .view {
+        max-width: 50vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px;
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        .img-view {
+            border-radius: 5px;
+            width: 200px;
+            height: 300px;
+        }
     }
+}
+/* VISUALIZAR FILME FIM */
 
-    th, td {
-        border-bottom-width: 2px;
-        padding: 0.5rem;
-        text-align: left;
-    }
+/* CADASTRO COMEÇO */
+.cadastro-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 
-    /* SELECIONA TODAS AS LINHAS PARES > even=par odd=impar */
-    tbody tr:nth-child(even) {
-        background-color: var(--cor-cinza-claro);
-    }
+    .cadastro-label-input {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    
+        input {
+            min-width: 70vh;
+            min-height: 20px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
 
-    tbody tr:hover {
-        background-color: var(--cor-cinza);
+        label {
+            padding-left: 10px;
+            padding-bottom: 2px;
+        }
+
     }
     
-    .img {
-        width:110px;
-        height:150px;
-        border-radius: 5px;
-    }
+    
+    .cadastro-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
 
-    button {
-        border: none;
-        background-color: transparent;
+        button {
+            padding: 5px;
+        }
     }
-
 }
+/* CADASTRO FIM */
 
-/* CARDS HOME COMEÇO */
+/* LISTAR COMEÇO */
+.listar-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 20px; 
+    
+    .acao {
+        display: flex;
+        justify-content: end;
+    
+        a {
+            text-decoration: none;
+        }
+            
+        button {
+            padding: 0px 5px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    }
+
+    .table {
+        width: 100%;
+        border-color: var(--cor-cinza);
+        border-collapse: collapse;
+    
+        thead, th, tbody, td, tr {
+            border-color: inherit;
+            border-style: solid;
+            border-width: 0;
+        }
+    
+        th, td {
+            border-bottom-width: 2px;
+            padding: 0.5rem;
+            text-align: left;
+        }
+    
+        /* SELECIONA TODAS AS LINHAS PARES > even=par odd=impar */
+        tbody tr:nth-child(even) {
+            background-color: var(--cor-cinza-claro);
+        }
+    
+        tbody tr:hover {
+            background-color: var(--cor-cinza);
+        }
+        
+        .img {
+            width:110px;
+            height:150px;
+            border-radius: 5px;
+        }
+    
+        button {
+            border: none;
+            background-color: transparent;
+        }
+    
+    }
+}
+/* LISTAR FIM */
+
+/* HOME CARDS COMEÇO */
 .card {
     border: none;
     background-color: transparent;
@@ -232,7 +240,8 @@ body {
     border-radius: 5px;
     padding: 20px;
     gap: 18px;
-    /* background-image: linear-gradient(var(--cor-fundo-card), #363533); */
+    background-image: linear-gradient(var(--cor-1-fundo-card), var(--cor-2-fundo-card));
+    color: var(--cor-texto);
     box-shadow: 0px 0px 12px 4px rgba(0 ,0 ,0 , 0.3);
     transition: 0.5s;
 }
@@ -246,5 +255,4 @@ body {
     width: 200px;
     border-radius: 5px;
 }
-
-/* CARDS HOME FIM */
+/* HOME CARDS FIM */

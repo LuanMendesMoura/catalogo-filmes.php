@@ -18,7 +18,7 @@ $filmes = $filmeModel->buscarTodos();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela De Filmes</title>
+    <title>ADM - FILMES</title>
 
     <link rel="stylesheet" href="/catalogo-filmes/public/css/style.css">
 </head>
@@ -35,7 +35,7 @@ $filmes = $filmeModel->buscarTodos();
             </ul>
         </nav>
     </header>
-    <section class="container">
+    <section class="listar-container">
         <h2>Filme</h2>
 
         <div class="acao">
